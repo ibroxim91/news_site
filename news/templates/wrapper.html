@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% block title %}
+<title>Eng so'nggi dunyo va IT yangiliklari</title>
+{% endblock %}
+{% block meta %}
+ <meta name="description" content="Dunyo va O'zbekiston yangiliklari,Янгиликлар ,xabarlar">
+ {% endblock %}
+<!-- favicon -->
+<link href="{% static 'assets/img/favicon.png" rel=icon>
+
+<!-- web-fonts -->
+<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500' rel='stylesheet' type='text/css'> -->
+
+<!-- Bootstrap -->
+<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+<!-- font-awesome -->
+<link href="{% static 'assets/fonts/font-awesome/font-awesome.min.css' %}" rel="stylesheet">
+<!-- Mobile Menu Style -->
+<link href="{% static 'assets/css/mobile-menu.css' %}" rel="stylesheet">
+
+<!-- Owl carousel -->
+<link href="{% static 'assets/css/owl.carousel.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/glip.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/owl.theme.default.min.css' %}" rel="stylesheet">
+<!-- Theme Style -->
+<link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar">
+<div id="main-wrapper">
+<!-- Page Preloader -->
+<div id="preloader">
+<div id="status">
+<div class="status-mes"></div>
+</div>
+</div>
+<!-- preloader -->
+
+<div class="uc-mobile-menu-pusher">
+<div class="content-wrapper">
+<section id="header_section_wrapper" class="header_section_wrapper">
+<div class="container">
+<div class="header-section">
+<div class="row">
+<div class="col-md-4">
+<div class="left_section">
+       <span class="date">
+  <span class="breadcrumb-item "style="padding-left: 10px;"><span id="doc_time">
+ Sana va Vaqt
+</span>
+</span>
+
+
+<script type="text/javascript">
+function clock() {
+var d = new Date();
+var month_num = d.getMonth()
+var day = d.getDate();
+var hours = d.getHours();
+var minutes = d.getMinutes();
+var seconds = d.getSeconds();
+
+month=new Array("Yanvar", "Fevral", "Mart", "Aprel", "May", "Iyun",
+"Iyul", "Avgust", "Sentabr", "Oktabr", "Noyabr", "Dekabr");
+
+if (day <= 9) day = "0" + day;
+if (hours <= 9) hours = "0" + hours;
+if (minutes <= 9) minutes = "0" + minutes;
+if (seconds <= 9) seconds = "0" + seconds;
+
+date_time = "Bugun - " + day + " " + month[month_num] + " " + d.getFullYear() +
+" y.&nbsp;&nbsp;&nbsp; - "+ hours + ":" + minutes + ":" + seconds;
+if (document.layers) {
+ document.layers.doc_time.document.write(date_time);
+ document.layers.doc_time.document.close();
+}
+else document.getElementById("doc_time").innerHTML = date_time;
+ setTimeout("clock()", 1000);
+}
+</script>
+<script type="text/javascript">
+ clock();
+</script>
+<div class="social">
+ <a class="icons-sm fb-ic" href="#">Telegram kanalimiz <i class="fa fa-send"></i></a>
+<!--Twitter-->
+
+</div>
+<!-- Top Social Section -->
+</div>
+<!-- Left Header Section -->
+</div>
+<div class="col-md-4">
+<div class="logo">
+<a href="index.html"><img src="{% static 'assets/img/logo.png' %}" alt="Tech NewsLogo"></a>
+</div>
+<!-- Logo Section -->
+</div>
+<div class="col-md-4">
+<div class="right_section">
+<ul class="nav navbar-nav">
+<li><a href="#">Kirish</a></li>
+<li><a href="#">Ro'yxatdan o'tish</a></li>
+<!-- <li class="dropdown lang">
+<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">En <i
+class="fa fa-angle-down"></i></button>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+<li><a href="#">Bn</a></li>
+</ul>
+</li> -->
+</ul>
+<!-- Language Section -->
+
+<ul class="nav-cta hidden-xs">
+<li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><i
+class="fa fa-search"></i></a>
+<ul class="dropdown-menu">
+<li>
+<div class="head-search">
+    <form role="form">
+        <!-- Input Group -->
+        <div class="input-group">
+            <input type="text" onkeyup="SearchNews(this.value)" class="form-control"
+                   placeholder="Kalit so'zni kiriting"> <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary">Qidiruv</button></span>
+    </div>
+        <div id="results" class="text-center">
+           <p><a href="#">Yangil nomi uzunssdds dssdsd dcasdfrd asda</a></p> 
+        </div>
+    </form>
+ 
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<!-- Search Section -->
+</div>
+<!-- Right Header Section -->
+</div>
+</div>
+</div>
+<!-- Header Section -->
+<script>
+        function SearchNews(str){
+          console.log(str);                          
+
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+    var data = JSON.parse(this.responseText);
+    console.log(data.news.length);
+    var results = document.getElementById('results');
+    var mobile_results = document.getElementById('mobile-results');
+    if(data.status == 'ok'){
+        results.style="display:block"
+        mobile_results.style="display:block"
+        var p = '<p>';
+        for (var i = 0; i < data.news.length;i++) {
+
+          p+='<p><a href="http://localhost/news/'+data.news[i][1]+'">'+data.news[i][0]+'</a></p>';
+
+        }
+        p+='</p>';
+        results.innerHTML = p;
+        mobile_results.innerHTML = p;
+    }
+    }
+  }
+  var url = "{% url 'mynews:search_news' %}";
+  var url = url+"?q="+str;
+
+  xmlhttp.open("GET",url,true);
+  xmlhttp.send();
+}
+
+        </script>
+<div class="navigation-section">
+<nav class="navbar m-menu navbar-default">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button  style="margin-top:35px; position: absolute; background-color:black;" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span> <span
+class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+</button>
+</div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="#navbar-collapse-1">
+
+<ul class="nav navbar-nav main-nav">
+    {% for c in categories %}
+
+{% if c.subcategory_set.all %}
+<li class="dropdown m-menu-fw"><a href="{{ c.get_absolute_url }}" data-toggle="dropdown" class="dropdown-toggle">{{ c }}
+<span><i class="fa fa-angle-down"></i></span></a>
+<ul class="dropdown-menu">
+<li>
+<div class="m-menu-content">
+    {% for s in c.subcategory_set.all %}
+    <ul class="col-sm-3">
+        <li class="dropdown-header"><a href="{{ s.get_absolute_url }}">{{ s }}</a></li>
+      
+    </ul>
+    {% endfor %}
+
+</div>
+</li>
+</ul>
+</li>
+{% else %}
+<li class="active"><a href="{{ c.get_absolute_url }}">{{ c }}</a></li>
+
+
+{% endif %}
+{% endfor %}
+</ul>
+</div>
+<!-- .navbar-collapse -->
+</div>
+<!-- .container -->
+</nav>
+<!-- .nav -->
+</div>
+<!-- .navigation-section -->
+</div>
+<!-- .container -->
+</section>
+<!-- header_section_wrapper -->
+
+<div id="carousel" class="carousel slide hidden-md hidden-lg" data-ride="carousel">
+  <div class="carousel-inner">
+        {% for h in home %}
+    <div  {% if forloop.first %} class="item active" {% else %} class="item" {% endif %} style="position:;">
+
+    <div class="carousel-caption">
+   <p class="h3"><a style="color:white;" href="{{ h.get_absolute_url}}">{{ h }}</a><br>
+    <small style="color:white;">{{ h.added }}, {{ h.reg_data|date:'Y-m-d H:m' }}</small>
+   </p>
+</div>
+      <a style="color:white;" href="{{ h.get_absolute_url}}"><img src="{{ h.image_one.url }}" alt="..."></a>
+    
+    </div>
+    {% endfor %}
+
+
+  </div>
+    <a class="left carousel-control" style="margin-top:170px;" href="#carousel" role="button" data-slide="prev">
+    <span class="fa fa-arrow-left" aria-hidden="true"></span>
+    <span class="sr-only">prev</span>
+  </a>
+  <a class="right carousel-control" style="margin-top:170px;" href="#carousel" role="button" data-slide="next">
+    <span class="fa fa-arrow-right" aria-hidden="true"></span>
+    <span class="sr-only">next</span>
+  </a>
+</div>
+<style>
+    .news_title{
+
+        position:absolute;
+        left:10px;
+        bottom:10px; 
+        width: 100%;
+        color:white;
+        font-size:19px;
+    }
+</style>
+
+<!-- Feature News Section -->
+
+{% block content %}
+
+
+{% endblock %}
+<section id="footer_section" class="footer_section">
+    <div class="container">
+        <hr class="footer-top">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="footer_widget_title"><h3><a href="category.html" target="_self">O'ZBEKISTON VA dUNYO YANGILIKLARI</a></h3></div>
+                <div class="logo footer-logo">
+                    <a title="fontanero" href="index.html">
+                        <img src="{% static 'assets/img/tech_about.jpg' %}" alt="technews">
+                    </a>
+
+                    <p>Eng so'nggi eng qaynoq xabarlar</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer_widget_title">
+                    <h3><a href="category.html" target="_self">Bo'limlar</a></h3>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="list-unstyled left">
+                            {% for c in categories %}
+                            <li><a href="{{ c.get_absolute_url}}">{{ c }}</a></li>
+                            {% endfor %}
+                      
+                        </ul>
+                    </div>
+                 
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer_widget_title">
+                    <h3><a href="#" target="_self">Tasodfiy yangiliklar</a></h3>
+                </div>
+               {% if footer %}
+    {% for n in footer %}
+   <div class="media">
+                    <div class="media-left">
+            <a href="{{ n.get_absolute_url}}"><img class="media-object" src="{{ n.image_one.url}}"
+                                       width="125" height="125" alt="Generic placeholder image"></a>
+                    </div>
+                    <div class="media-body">
+                        <span class="tag purple">{{ n.category }}</span>
+
+                        <h3 class="media-heading"><a href="{{ n.get_absolute_url}}" target="_self">{{ n.description|truncatewords:15}}</a></h3>
+                        <span class="media-date"><a href="{{ n.get_absolute_url}}">{{ n.reg_data}}</a>, Qo'shdi: <a href="#">{{ n.added }}</a></span>
+
+                        <div class="media_social">
+                            <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Ulashildi</span>
+                            <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Muxokama qilindi</span>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+                {% else  %}
+                        <div class="col-md-12">
+                <div class="text-center">
+                    <div class="alert alert-warning">
+                        <h3>Xozircha yangliklar topilmadi</h3>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+ 
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer_bottom_Section">
+        <div class="container">
+            <div class="row">
+                <div class="footer">
+                    <div class="col-sm-3">
+                        <div class="social">
+                            <a class="icons-sm fb-ic">Telegram kanalimiz <i class="fa fa-send"></i></a>
+                            
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <p>&copy; Copyright 2020 Sayt  Tuzuvchisi   <a href="http://pmaster.uz">Program Master</a> </p>
+                    </div>
+                    <div class="col-sm-3">
+                        <p>O'zbekiston va Dunyo yangiliklari</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- #content-wrapper -->
+
+</div>
+<!-- .offcanvas-pusher -->
+
+<a href="#" class="crunchify-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+
+<div class="uc-mobile-menu uc-mobile-menu-effect">
+    <button type="button" style="margin-top:45px;" class="close" aria-hidden="true" data-toggle="offcanvas"
+            id="uc-mobile-menu-close-btn">&times;</button>
+    <div>
+        <div>
+<div class="head-search">
+    <form role="form">
+        <!-- Input Group -->
+        <div class="input-group" style="padding-top:10px; width:92%; margin:0px auto;">
+            <input type="text" onkeyup="SearchNews(this.value)" class="form-control"
+                   placeholder="Kalit so'zni kiriting"> <span class="input-group-btn">
+        <button type="submit" style="height:35px;" class="btn btn-primary">Qidiruv</button></span>
+    </div>
+        <div id="mobile-results" class="text-center">
+         
+        </div>
+    </form>
+  <style>
+      #results{
+        
+        width:100%;
+        font-size:20px;
+        overflow:auto;
+        display: none;
+      }
+      #results>p{
+        padding:10px;
+      }
+       #mobile-results{
+        
+        width:100%;
+        font-size:20px;
+        overflow:auto;
+        display: none;
+      }
+    #mobile-results>p{
+        padding:10px;
+        font-color:white;
+      }
+       #mobile-results a{
+       
+        color:white;
+      }
+  </style>  
+</div>
+            <ul id="menu">
+                {% for c in categories %}
+                {% if c.subcategory_set.all %}
+                           <li class="dropdown m-menu-fw"><a href="#" data-toggle="dropdown" class="dropdown-toggle">{{ c }}
+                    <span><i class="fa fa-angle-down"></i></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="m-menu-content">
+                                {% for s in c.subcategory_set.all%}
+                                <ul class="col-sm-3">
+                                    <li class="dropdown-header"><a href="{{ s.get_absolute_url }}">{{ s }}</a></li>
+                                 
+                                </ul>
+                                {% endfor %}
+                            
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                {% else %}
+                <li class="active"><a href="{{ c.get_absolute_url }}">{{ c }}</a></li>
+              {% endif %}
+              {% endfor %}
+         
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- .uc-mobile-menu -->
+
+</div>
+<!-- #main-wrapper -->
+
+<!-- jquery Core-->
+<script src="{% static 'assets/js/jquery-2.1.4.min.js' %}"></script>
+
+<!-- Bootstrap -->
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+
+<!-- Theme Menu -->
+<script src="{% static 'assets/js/mobile-menu.js' %}"></script>
+
+<!-- Owl carousel -->
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+
+<!-- Theme Script -->
+<script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+</html>
