@@ -144,7 +144,7 @@
                                        width="125" height="125" alt="Generic placeholder image"></a>
                     </div>
                     <div class="media-body">
-                        <span class="tag purple">{{ n.category }}</span>
+                        <a href="{{ n.category.get_absolute_url}}"><span class="tag purple">{{ n.category }}</span></a>
 
                         <h3 class="media-heading"><a href="{{ n.get_absolute_url}}" target="_self">{{ n.description|truncatewords:15}}</a></h3>
                         <span class="media-date"><a href="{{ n.get_absolute_url}}">{{ n.reg_data}}</a>, Qo'shdi: <a href="#">{{ n.added }}</a></span>

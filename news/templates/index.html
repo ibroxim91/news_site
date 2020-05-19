@@ -10,7 +10,7 @@
 
 <div class="category_section tablet">
     <div class="article_title header_pink">
-        <h2><a href="category.html" target="_self">So'nggi yangiliklar</a></h2>
+        <h3><a href="#" target="self">So'nggi yangiliklar</a></h3>
     </div>
     <!-- Mobile News Section -->
 
@@ -21,7 +21,7 @@
             <div class="col-md-6">
                 <div class="category_article_body">
                     <div class="top_article_img">
-                        <a href="single.html" target="_self"><img class="img-responsive" src="{{ n.image_one.url }}"
+                        <a href="{{ n.get_absolute_url}}" target="_self"><img class="img-responsive" src="{{ n.image_one.url }}"
                                                                    alt="feature-top">
                         </a>
                     </div>
@@ -35,7 +35,7 @@
                     <!-- category_article_title -->
 
                     <div class="article_date"><a href="#">{{ n.reg_data}}</a>, Qo'shdi: <a href="#">{{ n.added }}</a></div>
-                    <!----article_date------>
+                    <!---article_date-->
                     <!-- article_date -->
 
                     <div class="category_article_content">
@@ -44,8 +44,8 @@
                     <!-- category_article_content -->
 
                     <div class="media_social">
-                        <span><a href="#"><i class="fa fa-share-alt"></i>424 </a> Ulashildi</span>
-                        <span><i class="fa fa-comments-o"></i><a href="#">4</a> Muxokama qilindi</span>
+                        <span><a href="#"><i class="fa fa-share-alt"></i>{{ n.shared }} </a> Ulashildi</span>
+                        <span><i class="fa fa-comments-o"></i><a href="#">{{ n.comment }}</a> Muxokama qilindi</span>
                     </div>
                     <!-- media_social -->
 
@@ -82,7 +82,7 @@
                     <div class="media-body">
                         <span class="tag purple">{{ n.category }}</span>
 
-                        <h3 class="media-heading"><a href="single.html" target="_self">{{ n.description|truncatewords:15}}</a></h3>
+                        <h3 class="media-heading"><a href="{{ n.get_absolute_url}}" target="_self">{{ n.description|truncatewords:15}}</a></h3>
                         <span class="media-date"><a href="#">{{ n.reg_data}}</a>, Qo'shdi: <a href="#">{{ n.added }}</a></span>
 
                         <div class="media_social">
@@ -162,12 +162,12 @@
                     <div class="media-body">
                         <span class="tag purple">{{ n.category }}</span>
 
-                        <h3 class="media-heading"><a href="single.html" target="_self">{{ n.description|truncatewords:15}}</a></h3>
+                        <h3 class="media-heading"><a href="{{ n.get_absolute_url}}" target="_self">{{ n.description|truncatewords:15}}</a></h3>
                         <span class="media-date"><a href="#">{{ n.reg_data}}</a>, Qo'shdi: <a href="#">{{ n.added }}</a></span>
 
                         <div class="media_social">
-                            <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Ulashildi</span>
-                            <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Muxokama qilindi</span>
+                            <span><a href="#"><i class="fa fa-share-alt"></i>{{ n.shared }}</a> Ulashildi</span>
+                            <span><a href="#"><i class="fa fa-comments-o"></i>{{ n.comment }}</a> Muxokama qilindi</span>
                         </div>
                     </div>
                 </div>
@@ -205,7 +205,7 @@
 <div class="col-md-4">
 <div class="widget">
     <div class="widget_title widget_black">
-        <h2><a href="#">Boshqa yangliklar</a></h2>
+        <h3><a href="#">Boshqa yangliklar</a></h3>
     </div>
     {% if popular %}
     {% for n in popular %}
@@ -217,12 +217,12 @@
                     <div class="media-body">
                         <span class="tag purple">{{ n.category }}</span>
 
-                        <h3 class="media-heading"><a href="single.html" target="_self">{{ n.description|truncatewords:15}}</a></h3>
+                        <h3 class="media-heading"><a href="{{ n.get_absolute_url}}" target="_self">{{ n.description|truncatewords:15}}</a></h3>
                         <span class="media-date"><a href="#">{{ n.reg_data}}</a>, Qo'shdi: <a href="#">{{ n.added }}</a></span>
 
                         <div class="media_social">
-                            <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Ulashildi</span>
-                            <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Muxokama qilindi</span>
+                            <span><a href="#"><i class="fa fa-share-alt"></i>{{ n.shared }}</a> Ulashildi</span>
+                            <span><a href="#"><i class="fa fa-comments-o"></i>{{ n.comment }}</a> Muxokama qilindi</span>
                         </div>
                     </div>
                 </div>
@@ -257,7 +257,7 @@
 
 <div class="widget reviews m30">
     <div class="widget_title widget_black">
-        <h2><a href="#">Ko'p ko'rilgan xabarlar</a></h2>
+        <h3><a href="#">Ko'p ko'rilgan xabarlar</a></h3>
     </div>
     {% if reviews %}
     {% for n in reviews %}
@@ -269,12 +269,12 @@
                     <div class="media-body">
                         <span class="tag purple">{{ n.category }}</span>
 
-                        <h3 class="media-heading"><a href="single.html" target="_self">{{ n.description|truncatewords:15}}</a></h3>
+                        <h3 class="media-heading"><a href="{{ n.get_absolute_url}}" target="_self">{{ n.description|truncatewords:15}}</a></h3>
                         <span class="media-date"><a href="#">{{ n.reg_data}}</a>, Qo'shdi: <a href="#">{{ n.added }}</a></span>
 
                         <div class="media_social">
-                            <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Ulashildi</span>
-                            <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Muxokama qilindi</span>
+                            <span><a href="#"><i class="fa fa-share-alt"></i>{{ n.shared }}</a> Ulashildi</span>
+                            <span><a href="#"><i class="fa fa-comments-o"></i>{{ n.comment }}</a> Muxokama qilindi</span>
                         </div>
                     </div>
                 </div>
@@ -301,7 +301,7 @@
 
 <div class="widget m30">
     <div class="widget_title widget_black">
-        <h2><a href="#">Ko'p muxokama qilindi</a></h2>
+        <h3><a href="#">Ko'p muxokama qilindi</a></h3>
     </div>
     {% if reviews %}
     {% for n in reviews %}
@@ -315,12 +315,12 @@
                     <div class="media-body">
                         <span class="tag purple">{{ n.category }}</span>
 
-                        <h3 class="media-heading"><a href="single.html" target="_self">{{ n.description|truncatewords:15}}</a></h3>
+                        <h3 class="media-heading"><a href="{{ n.get_absolute_url}}" target="_self">{{ n.description|truncatewords:15}}</a></h3>
                         <span class="media-date"><a href="#">{{ n.reg_data}}</a>, Qo'shdi: <a href="#">{{ n.added }}</a></span>
 
                         <div class="media_social">
-                            <span><a href="#"><i class="fa fa-share-alt"></i>424</a> Ulashildi</span>
-                            <span><a href="#"><i class="fa fa-comments-o"></i>4</a> Muxokama qilindi</span>
+                            <span><a href="#"><i class="fa fa-share-alt"></i>{{ n.shared }}</a> Ulashildi</span>
+                            <span><a href="#"><i class="fa fa-comments-o"></i>{{ n.comment }}</a> Muxokama qilindi</span>
                         </div>
                     </div>
                 </div>
