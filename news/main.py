@@ -25,6 +25,6 @@ id = Popen(["arp", "-n", IP], stdout=PIPE)
 s = pid.communicate()[0]
 mac = re.search(r"(([a-f\d]{1,2}\:){5}[a-f\d]{1,2})", s).groups()[0]
 print(mac)
-
+print("Hello")
 
 # sniff(prn=arp_monitor_callback, filter="arp", store=0)
